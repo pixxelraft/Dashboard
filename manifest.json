@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Meomni AI Dashboard",
+  "version": "1.0",
+  "description": "A futuristic new tab dashboard with 3D background, weather, time, and customizable shortcuts",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "geolocation",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.openweathermap.org/*",
+    "https://api.quotable.io/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+} 
