@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umair's Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Stars Background -->
+  <div class="stars"></div>
+  
+  <!-- Shooting Stars -->
+  <div class="shooting-stars"></div>
+  
+  <!-- 3D Background Container -->
+  <div id="planet-container"></div>
+  
+  <!-- Welcome Content -->
+  <div class="content">
+    <h1 class="glow-text">Welcome, Umair!</h1>
+    <p>Dream big. The universe is yours.</p>
+  </div>
+  
+  <!-- Main Dashboard Content -->
+  <div class="dashboard-container">
+    <!-- Top Bar with Shortcuts -->
+    <div class="top-bar">
+      <div class="shortcuts-container">
+        <div class="shortcuts-row" id="shortcuts-row">
+          <!-- Shortcuts will be populated by JavaScript -->
+        </div>
+        <button class="add-shortcut-btn" id="add-shortcut-btn">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="search-container">
+        <form id="search-form" action="https://www.google.com/search" method="get" target="_blank">
+          <div class="search-box">
+            <input type="text" id="search-input" name="q" placeholder="Search" autocomplete="off">
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <!-- Time and Date -->
+      <div class="time-date-container">
+        <div class="time" id="current-time">22:12</div>
+        <div class="date" id="current-date">Monday</div>
+        <div class="date-full" id="current-date-full">28 July</div>
+      </div>
+      
+      <!-- Weather Details -->
+      <div class="weather-details">
+        <div class="weather-item">
+          <i class="fas fa-wind weather-detail-icon"></i>
+          <div class="weather-detail-text">
+            <div class="weather-detail-label">Wind Speed</div>
+            <div class="weather-detail-value" id="wind-speed">Gentle breeze</div>
+          </div>
+        </div>
+        
+        <div class="weather-item">
+          <i class="fas fa-tint weather-detail-icon"></i>
+          <div class="weather-detail-text">
+            <div class="weather-detail-label">Humidity</div>
+            <div class="weather-detail-value" id="humidity">Sultry</div>
+          </div>
+        </div>
+        
+        <div class="weather-item">
+          <i class="fas fa-cloud-rain weather-detail-icon"></i>
+          <div class="weather-detail-text">
+            <div class="weather-detail-label" id="temperature-label">28°</div>
+            <div class="weather-detail-value" id="condition">light rain</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- News Feed -->
+      <div class="news-feed">
+        <div class="news-item" id="news-item">
+          Anker is no longer selling 3D printers | Sales have been paused indefinitely.
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Panel - Timeline/Forecast -->
+    <div class="right-panel">
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-date">28 MON</div>
+          <div class="timeline-time">22:00</div>
+          <div class="timeline-weather">
+            <i class="fas fa-cloud timeline-icon"></i>
+            <span class="timeline-temp">28°</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-time">23:00</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">29 TUE</div>
+          <div class="timeline-time">00:00</div>
+          <div class="timeline-period">Night</div>
+          <div class="timeline-temp">31°</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-time">01:00</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-time">02:00</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-time">03:00</div>
+          <div class="timeline-period">Deep Night</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">30 WED</div>
+          <div class="timeline-temp">28°</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">31 THU</div>
+          <div class="timeline-temp">33°</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add Shortcut Modal -->
+  <div class="modal" id="shortcut-modal">
+    <div class="modal-content">
+      <h3>Add New Shortcut</h3>
+      <form id="shortcut-form">
+        <input type="text" id="shortcut-name" placeholder="Website Name" required>
+        <input type="url" id="shortcut-url" placeholder="Website URL" required>
+        <div class="modal-buttons">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" id="cancel-shortcut">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
